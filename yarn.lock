@@ -4201,9 +4201,9 @@ axe-core@=4.7.0:
   integrity sha512-M0JtH+hlOL5pLQwHOLNYZaXuhqmvS8oExsqB1SBYgA4Dk7u/xx+YdGHXaK5pyUfed5mYXdlYiphWq3G8cRi5JQ==
 
 axios@^1.6.0:
-  version "1.7.1"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-1.7.1.tgz#522145622a09dfaf49359837db9649ff245a35b9"
-  integrity sha512-+LV37nQcd1EpFalkXksWNBiA17NZ5m5/WspmHGmZmdx1qBOg/VNq/c4eRJiA9VQQHBOs+N0ZhhdU10h2TyNK7Q==
+  version "1.7.2"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-1.7.2.tgz#b625db8a7051fbea61c35a3cbb3a1daa7b9c7621"
+  integrity sha512-2A8QhOMrbomlDuiLeK9XibIBzuHeRcqqNOHp0Cyp5EoJ1IFDh+XZH3A6BkXtv0K4gFGCI0Y4BM7B1wOEi0Rmgw==
   dependencies:
     follow-redirects "^1.15.6"
     form-data "^4.0.0"
@@ -5713,9 +5713,9 @@ entities@^2.0.0:
   integrity sha512-p92if5Nz619I0w+akJrLZH0MX0Pb5DX39XOwQTtXSdQQOaYH03S1uIQp4mhOZtAXrxq4ViO67YTiLBo2638o9A==
 
 ermis-chat-widget@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/ermis-chat-widget/-/ermis-chat-widget-1.0.0.tgz#0f15ed23d9c4876cfdd4dd15991f1861a650b5c2"
-  integrity sha512-YmgqcUOnsvgq28FRP1VJ9CX1q4l5xh4yKswLNhOIIjNl5OAl/tGnV6PdmzVOuIfaiB58gwC3NeQ7EUfR26lH6Q==
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/ermis-chat-widget/-/ermis-chat-widget-1.0.1.tgz#273cb9d1d57412fa6982a1fef5f4acbdf3b1b2ef"
+  integrity sha512-Op3coL3KIIxNdxs6rfdZqZbi1t0yGVLXlTGe/DnuE4F72t18FLLNm1xCnnmUcPL8JOS94xUkR29ugRoqEQGCtA==
   dependencies:
     "@babel/polyfill" "^7.12.1"
     "@emoji-mart/data" "^1.2.1"

@@ -133,8 +133,8 @@ function App() {
           setReceiverId(value.trim());
         }
       } catch (error) {
+        setReceiverId('');
         setResult(null)
-        console.error('Error fetching data:', error);
       } finally {
         setLoading(false);
       }
@@ -146,7 +146,6 @@ function App() {
     const value = e.target.value;
     if (value) {
       debouncedSearch(value)
-      setReceiverId(value)
     } else {
       setReceiverId('')
       setResult(null)
