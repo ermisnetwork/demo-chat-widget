@@ -6,9 +6,6 @@ import { debounce } from 'lodash';
 import "./App.css";
 
 const API_KEY = 'KzubBBcsO3KT1747826418734'
-const SENDER_ID = "0x8eb718033b4a3c5f8bdea1773ded0259b2300f5d";
-const RECEIVER_ID = "0x8eb718033b4a3c5f8bdea1773ded0259b2300f8a";
-
 const BASE_URL_AUTH = "https://oauth-staging.ermis.network";
 
 const createNonce = (length: any) => {
