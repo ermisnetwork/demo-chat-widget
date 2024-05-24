@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  ermis-chat-widget-demo:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "127.0.0.1:3000:3000"
+    networks:
+      - ermis-dev
+    restart: unless-stopped
+networks:
+  ermis-dev:
+    external: true
