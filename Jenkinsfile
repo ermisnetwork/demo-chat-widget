@@ -23,7 +23,7 @@ pipeline {
         always {
             script {
                 sh '''
-                docker builder prune
+                docker builder prune --force
                 '''
             }
             cleanWs()
