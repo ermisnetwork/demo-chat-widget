@@ -5712,10 +5712,10 @@ entities@^2.0.0:
   resolved "https://registry.yarnpkg.com/entities/-/entities-2.2.0.tgz#098dc90ebb83d8dffa089d55256b351d34c4da55"
   integrity sha512-p92if5Nz619I0w+akJrLZH0MX0Pb5DX39XOwQTtXSdQQOaYH03S1uIQp4mhOZtAXrxq4ViO67YTiLBo2638o9A==
 
-ermis-chat-widget@^1.0.8:
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/ermis-chat-widget/-/ermis-chat-widget-1.0.8.tgz#264c664ba5dcf3824d01fead765d4c8a7dfd294d"
-  integrity sha512-PFBLUkoSfeBWn28O74/XdRDUnevNL3mvh3NTl0okG7XFpbqKuul/As+KLeaCFBMJX1aOqEdoYHkoPWo59UV3kg==
+ermis-chat-widget@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/ermis-chat-widget/-/ermis-chat-widget-2.0.0.tgz#bbee614bf23bb5a25ae8c1cea59956f7c4c49728"
+  integrity sha512-agTOtMkG/5zxnw8xxBhNEw5I34d/p6LUcQeHRtVk6XMH6UIdIoIGZNrWXqqRmeIfJA/R4LXIeGAPxXXRD2Eq1w==
   dependencies:
     "@babel/polyfill" "^7.12.1"
     "@emoji-mart/data" "^1.2.1"

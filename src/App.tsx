@@ -1,11 +1,11 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { ErmisChatWidget } from "ermis-chat-widget";
 import { useAccount, useSignTypedData } from "wagmi";
-import { Alert, Button, Input, Space, Spin, notification } from 'antd';
-import { debounce } from 'lodash';
+import { Alert, Button, Input, Space, Spin, notification } from "antd";
+import { debounce } from "lodash";
 import "./App.css";
 
-const API_KEY = 'KzubBBcsO3KT1747826418734'
+const API_KEY = "KzubBBcsO3KT1747826418734";
 const BASE_URL_AUTH = "https://oauth-staging.ermis.network";
 
 const createNonce = (length: any) => {
@@ -25,10 +25,9 @@ function App() {
 
   const [open, setOpen] = useState<boolean>(false);
   const [token, setToken] = useState<string>("");
-  const [receiverId, setReceiverId] = useState<string>("")
+  const [receiverId, setReceiverId] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
-  const [result, setResult] = useState<any>(null)
-
+  const [result, setResult] = useState<any>(null);
 
   useEffect(() => {
     if (address && connector) {
@@ -93,7 +92,7 @@ function App() {
             }
           }
         } catch (err: any) {
-          notification.error({ message: err.message })
+          notification.error({ message: err.message });
         }
       };
       onLogin();
@@ -111,27 +110,30 @@ function App() {
       if (!value) return;
       try {
         const params = {
-          jsonrpc: '2.0',
-          method: 'eth_getBalance',
-          params: [value.trim(), 'latest'],
-          id: 1
-        }
+          jsonrpc: "2.0",
+          method: "eth_getBalance",
+          params: [value.trim(), "latest"],
+          id: 1,
+        };
         setLoading(true);
-        const response = await fetch(`https://mainnet.infura.io/v3/8abf30920f8f404ea7ebdeaf6d7ec53e`, {
-          method: 'post',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(params)
-        });
+        const response = await fetch(
+          `https://mainnet.infura.io/v3/8abf30920f8f404ea7ebdeaf6d7ec53e`,
+          {
+            method: "post",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(params),
+          }
+        );
         const result = await response.json();
         setResult(result);
         if (result.error) {
-          setReceiverId('');
+          setReceiverId("");
         } else {
           setReceiverId(value.trim());
         }
       } catch (error) {
-        setReceiverId('');
-        setResult(null)
+        setReceiverId("");
+        setResult(null);
       } finally {
         setLoading(false);
       }
@@ -142,29 +144,28 @@ function App() {
   const onChangeAddress = (e: any) => {
     const value = e.target.value;
     if (value) {
-      debouncedSearch(value)
+      debouncedSearch(value);
     } else {
-      setReceiverId('')
-      setResult(null)
+      setReceiverId("");
+      setResult(null);
     }
-
-  }
+  };
 
   const renderAlert = () => {
     if (result) {
       if (result.error) {
-        return <Alert message={result.error.message} type="error" showIcon />
+        return <Alert message={result.error.message} type="error" showIcon />;
       } else {
-        return <Alert message="Valid wallet address" type="success" showIcon />
+        return <Alert message="Valid wallet address" type="success" showIcon />;
       }
     } else {
-      return null
+      return null;
     }
-  }
+  };
 
   const onStartNewChat = async () => {
-    setOpen(true)
-  }
+    setOpen(true);
+  };
 
   return (
     <div className="App">
@@ -182,14 +183,26 @@ function App() {
           </div>
         </div>
 
-        {address && token && <div style={{ width: '500px', marginTop: 15 }}>
-          <Space.Compact style={{ width: '100%' }}>
-            <Input placeholder="Enter receiver address" onChange={onChangeAddress} />
-            <Button type="primary" style={{ color: '#fff' }} disabled={!result || (result && result.error)} onClick={onStartNewChat}>Start new chat</Button>
-          </Space.Compact>
-          {loading && <Spin style={{ marginTop: 20 }} />}
-          <div style={{ marginTop: '15px' }}>{renderAlert()}</div>
-        </div>}
+        {address && token && (
+          <div className="searchBox">
+            <Space.Compact style={{ width: "100%" }}>
+              <Input
+                placeholder="Enter receiver address"
+                onChange={onChangeAddress}
+              />
+              <Button
+                type="primary"
+                style={{ color: "#fff" }}
+                disabled={!result || (result && result.error)}
+                onClick={onStartNewChat}
+              >
+                Start new chat
+              </Button>
+            </Space.Compact>
+            {loading && <Spin style={{ marginTop: 20 }} />}
+            <div style={{ marginTop: "15px" }}>{renderAlert()}</div>
+          </div>
+        )}
       </header>
 
       {address && token && (
