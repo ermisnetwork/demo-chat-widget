@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { WagmiProvider } from "wagmi";
-import { createWeb3Modal } from "@web3modal/wagmi/react";
-import { defaultWagmiConfig } from "@web3modal/wagmi/react/config";
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { WagmiProvider } from 'wagmi';
+import { createWeb3Modal } from '@web3modal/wagmi/react';
+import { defaultWagmiConfig } from '@web3modal/wagmi/react/config';
 import {
   arbitrum,
   avalanche,
@@ -16,11 +16,11 @@ import {
   mainnet,
   optimism,
   polygon,
-} from "wagmi/chains";
+} from 'wagmi/chains';
 
 const queryClient = new QueryClient();
 
-const projectId = "b7269aa7b1593b2f400e38a23a53b42b" || "";
+const projectId = 'b7269aa7b1593b2f400e38a23a53b42b' || '';
 const chains = [
   mainnet,
   polygon,
@@ -33,10 +33,10 @@ const chains = [
 ] as const;
 
 const metadata = {
-  name: "Web3Modal",
-  description: "Web3Modal Example",
-  url: "https://web3modal.com", // origin must match your domain & subdomain
-  icons: ["https://avatars.githubusercontent.com/u/37784886"],
+  name: 'ErmisChat widget',
+  description: 'Demo widget demo',
+  url: 'https://widget-demo.ermis.network/', // origin must match your domain & subdomain
+  icons: ['https://avatars.githubusercontent.com/u/37784886'],
 };
 
 const wagmiConfig = defaultWagmiConfig({
@@ -48,7 +48,7 @@ const wagmiConfig = defaultWagmiConfig({
 createWeb3Modal({ wagmiConfig, projectId });
 
 const root = ReactDOM.createRoot(
-  document.getElementById("root") as HTMLElement
+  document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>

@@ -9,6 +9,28 @@
   color: white;
 }
 
+.buttonGroup {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 10px;
+  width: 500px;
+}
+
+.buttonGroup-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.buttonGroup-item:last-child {
+  margin-bottom: 0;
+}
+
+.buttonGroup-item > span {
+  font-size: 16px;
+  padding-right: 15px;
+}
+
 .result {
   border: 1px solid #ddd;
   padding: 15px;
@@ -50,11 +72,20 @@
     padding: 15px;
   }
 
-  .result {
+  .result,
+  .buttonGroup {
     width: 100%;
   }
 
   .searchBox {
     width: 100%;
   }
+}
+
+:where(.css-dev-only-do-not-override-17seli4).ant-btn-primary:disabled,
+:where(.css-dev-only-do-not-override-17seli4).ant-btn-primary.ant-btn-disabled {
+  background: #1677ff;
+  opacity: 0.5;
+  color: #fff;
+  border-color: #1677ff;
 }
