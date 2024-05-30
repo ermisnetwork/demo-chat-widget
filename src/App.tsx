@@ -1,13 +1,13 @@
 import React, { useCallback, useState } from 'react';
-import { ErmisChatWidget } from 'ermis-chat-widget';
+import { ErmisChatWidget } from 'ermis-chat-widget-sdk';
 import { useAccount, useDisconnect, useSignTypedData } from 'wagmi';
 import { Alert, Button, Input, Space, Spin, notification } from 'antd';
 import { debounce } from 'lodash';
-import './App.css';
 import { useWeb3Modal } from '@web3modal/wagmi/react';
+import './App.css';
 
 const API_KEY = 'KzubBBcsO3KT1747826418734';
-const BASE_URL_AUTH = 'https://oauth-staging.ermis.network';
+const BASE_URL_AUTH = 'https://oauth.ermis.network';
 
 const createNonce = (length: any) => {
   let result = '';
@@ -108,18 +108,14 @@ function App() {
           },
           body: JSON.stringify({ address }),
         });
-
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
-
         const result = await response.json();
         const challenge: any = JSON.parse(result.challenge);
         const { types, domain, primaryType, message } = challenge;
-
         const nonce = createNonce(20);
         let signature = '';
-
         await signTypedDataAsync(
           {
             types,
@@ -134,7 +130,6 @@ function App() {
             },
           }
         );
-
         if (signature) {
           const data = {
             address,
@@ -148,11 +143,9 @@ function App() {
             },
             body: JSON.stringify(data),
           });
-
           if (!responseToken.ok) {
             throw new Error('Network response was not ok');
           }
-
           const resultToken = await responseToken.json();
           console.log('resultToken', resultToken);
           if (resultToken) {
@@ -202,13 +195,14 @@ function App() {
                 ) : (
                   <Button
                     type="primary"
+                    size="large"
                     style={{
                       borderRadius: '32px',
                       display: 'flex',
                       justifyContent: 'center',
                       alignItems: 'center',
                       fontWeight: 500,
-                      fontSize: '15px',
+                      width: '150px',
                     }}
                     onClick={() => open()}
                   >
@@ -221,13 +215,14 @@ function App() {
                 <Button
                   disabled={!address}
                   type="primary"
+                  size="large"
                   style={{
                     borderRadius: '32px',
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
                     fontWeight: 500,
-                    fontSize: '15px',
+                    width: '150px',
                   }}
                   onClick={onLogin}
                 >
@@ -254,12 +249,14 @@ function App() {
               <Input
                 placeholder="Enter receiver address"
                 onChange={onChangeAddress}
+                size="large"
               />
               <Button
                 type="primary"
                 style={{ color: '#fff' }}
                 disabled={!result || (result && result.error)}
                 onClick={onStartNewChat}
+                size="large"
               >
                 Start new chat
               </Button>
