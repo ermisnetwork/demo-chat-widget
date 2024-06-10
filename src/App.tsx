@@ -6,8 +6,10 @@ import { debounce } from 'lodash';
 import { useWeb3Modal } from '@web3modal/wagmi/react';
 import './App.css';
 
-const API_KEY = 'IxtqdBgFA6KK1732952602719';
-const BASE_URL_AUTH = 'https://oauth.ermis.network';
+const API_KEY = 'IxtqdBgFA6KK1732952602719'; // api key product
+// const API_KEY = 'KzubBBcsO3KT1747826418734'; // api key staging
+const BASE_URL_AUTH = 'https://oauth.ermis.network'; // product
+// const BASE_URL_AUTH = 'https://oauth-staging.ermis.network'; // staging
 
 const createNonce = (length: any) => {
   let result = '';
